@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Roda dos Homens — Projeto Homens em Equilíbrio | Luiz Fernando Moreira</title>
+<meta name="description" content="Grupo reflexivo para homens a partir de 22 anos, no Rio de Janeiro e em Niterói. Encontros quinzenais, presenciais e online, facilitados pelo psicólogo Luiz Fernando Moreira (CRP 05-17728).">
+<meta property="og:title" content="A Roda dos Homens — Projeto Homens em Equilíbrio">
+<meta property="og:description" content="Um espaço de escuta entre homens. Encontros quinzenais no Rio de Janeiro e em Niterói, presenciais e online.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --areia:#F7F2EA;
+  --areia-2:#EDE3D5;
+  --terra:#B9552F;
+  --terra-claro:#D4784F;
+  --terra-escuro:#8E3F22;
+  --azul:#2B4756;
+  --azul-claro:#3E6577;
+  --cinza:#6E6A65;
+  --cinza-claro:#9A948C;
+  --tinta:#241E1A;
+  --branco:#FFFDFA;
+  --borda:rgba(36,30,26,.10);
+  --sombra:0 2px 4px rgba(36,30,26,.04),0 12px 32px rgba(36,30,26,.07);
+  --raio:18px;
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--areia);color:var(--tinta);
+  line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--terra);margin-bottom:18px;display:block;
+}
+.section{padding:104px 0;position:relative}
+.section-alt{background:var(--branco)}
+.section-dark{background:var(--azul);color:var(--areia)}
+.section-dark .eyebrow{color:var(--terra-claro)}
+
+/* ---------- NAV ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(247,242,234,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:.35s;
+}
+header.scrolled{border-bottom-color:var(--borda);box-shadow:0 4px 24px rgba(36,30,26,.05)}
+nav{max-width:var(--max);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:-.02em}
+.logo-mark{width:32px;height:32px;flex:none;position:relative}
+.logo-mark svg{width:100%;height:100%}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:14.5px;color:var(--cinza);font-weight:500;transition:.2s;position:relative}
+.nav-links a:hover{color:var(--terra)}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--terra);color:#fff;padding:13px 26px;border-radius:100px;
+  font-size:14.5px;font-weight:600;letter-spacing:.01em;
+  transition:.25s;border:none;cursor:pointer;font-family:inherit;
+  box-shadow:0 4px 14px rgba(185,85,47,.24);
+}
+.btn:hover{background:var(--terra-escuro);transform:translateY(-2px);box-shadow:0 8px 22px rgba(185,85,47,.3)}
+.btn-ghost{background:transparent;color:var(--tinta);border:1.5px solid var(--borda);box-shadow:none}
+.btn-ghost:hover{background:transparent;border-color:var(--terra);color:var(--terra);box-shadow:none}
+.btn-light{background:var(--areia);color:var(--azul);box-shadow:none}
+.btn-light:hover{background:#fff;color:var(--azul)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--tinta)}
+
+/* ---------- HERO ---------- */
+.hero{padding:170px 0 96px;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;top:-380px;right:-260px;width:820px;height:820px;
+  background:radial-gradient(circle,rgba(212,120,79,.16) 0%,rgba(212,120,79,0) 66%);
+  border-radius:50%;pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-300px;left:-240px;width:640px;height:640px;
+  background:radial-gradient(circle,rgba(43,71,86,.10) 0%,rgba(43,71,86,0) 68%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.7rem,5.4vw,4.15rem);margin-bottom:26px}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero-lead{font-size:1.19rem;color:var(--cinza);max-width:33ch;margin-bottom:36px;font-weight:300}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.hero-meta{display:flex;gap:34px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--borda)}
+.hero-meta div{min-width:0}
+.hero-meta strong{display:block;font-family:'Fraunces',serif;font-size:1.32rem;color:var(--azul);font-weight:600;line-height:1.2}
+.hero-meta span{font-size:12.5px;color:var(--cinza-claro);letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+
+/* círculo da roda */
+.roda{position:relative;aspect-ratio:1;max-width:440px;margin-left:auto;width:100%}
+.roda-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(185,85,47,.28)}
+.roda-ring:nth-child(2){inset:11%;border-color:rgba(43,71,86,.20)}
+.roda-ring:nth-child(3){inset:22%;border-color:rgba(185,85,47,.16);border-style:dashed}
+.roda-core{
+  position:absolute;inset:32%;border-radius:50%;
+  background:linear-gradient(150deg,var(--terra) 0%,var(--terra-escuro) 100%);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#fff;font-family:'Fraunces',serif;font-size:1.05rem;line-height:1.3;padding:18px;
+  box-shadow:0 18px 44px rgba(142,63,34,.3);
+}
+.dot{
+  position:absolute;width:15px;height:15px;border-radius:50%;
+  background:var(--azul);border:3px solid var(--areia);
+  top:50%;left:50%;margin:-7.5px 0 0 -7.5px;
+  animation:pulse 5s ease-in-out infinite;
+}
+.dot:nth-child(even){background:var(--terra-claro)}
+@keyframes pulse{0%,100%{transform:translate(var(--x),var(--y)) scale(1);opacity:.9}50%{transform:translate(var(--x),var(--y)) scale(1.22);opacity:1}}
+
+/* ---------- FRASE ---------- */
+.manifesto{background:var(--azul);color:var(--areia);padding:78px 0;text-align:center;position:relative;overflow:hidden}
+.manifesto::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:660px;height:660px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,120,79,.14) 0%,transparent 65%);
+}
+.manifesto p{
+  font-family:'Fraunces',serif;font-size:clamp(1.5rem,3.6vw,2.35rem);
+  line-height:1.32;position:relative;z-index:2;max-width:20ch;margin:0 auto;
+}
+.manifesto span{color:var(--terra-claro);font-style:italic}
+
+/* ---------- GRIDS ---------- */
+.head{max-width:640px;margin-bottom:60px}
+.head h2{font-size:clamp(2rem,3.9vw,2.85rem);margin-bottom:20px}
+.head p{color:var(--cinza);font-size:1.06rem;font-weight:300}
+.section-dark .head p{color:rgba(247,242,234,.7)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{
+  background:var(--branco);border:1px solid var(--borda);border-radius:var(--raio);
+  padding:34px 30px;transition:.3s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:rgba(185,85,47,.28)}
+.card-num{
+  font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--terra);
+  letter-spacing:.1em;margin-bottom:16px;display:block;
+}
+.card h3{font-size:1.24rem;margin-bottom:12px}
+.card p{color:var(--cinza);font-size:15.4px;font-weight:300}
+
+.pill-box{display:flex;flex-wrap:wrap;gap:11px}
+.pill{
+  background:var(--branco);border:1px solid var(--borda);border-radius:100px;
+  padding:11px 21px;font-size:14.6px;color:var(--tinta);font-weight:500;transition:.25s;
+}
+.pill:hover{border-color:var(--terra);color:var(--terra);background:#fff}
+.section-dark .pill{background:rgba(247,242,234,.06);border-color:rgba(247,242,234,.16);color:var(--areia)}
+.section-dark .pill:hover{background:rgba(212,120,79,.16);border-color:var(--terra-claro);color:#fff}
+
+.valor-block{border-left:2px solid var(--terra);padding-left:26px;margin-bottom:34px}
+.valor-block h3{font-size:1.16rem;margin-bottom:9px}
+.valor-block p{color:var(--cinza);font-size:15.6px;font-weight:300}
+
+/* ---------- FACILITADOR ---------- */
+.fac{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.fac-img{position:relative}
+.fac-img img{
+  border-radius:var(--raio);width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;
+  box-shadow:0 20px 50px rgba(36,30,26,.16);
+}
+.fac-img::after{
+  content:'';position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--terra);
+  border-radius:var(--raio);z-index:-1;
+}
+.crp{
+  display:inline-flex;align-items:center;gap:8px;background:var(--areia-2);
+  color:var(--azul);padding:7px 16px;border-radius:100px;font-size:13px;
+  font-weight:600;letter-spacing:.03em;margin-bottom:20px;
+}
+.fac h2{font-size:clamp(1.9rem,3.5vw,2.6rem);margin-bottom:10px}
+.fac-sub{color:var(--terra);font-size:15.5px;font-weight:500;margin-bottom:24px}
+.fac p{color:var(--cinza);margin-bottom:16px;font-weight:300}
+.fac-stats{display:flex;gap:38px;margin-top:32px;padding-top:28px;border-top:1px solid var(--borda);flex-wrap:wrap}
+.fac-stats strong{display:block;font-family:'Fraunces',serif;font-size:1.9rem;color:var(--azul);font-weight:600;line-height:1}
+.fac-stats span{font-size:12.5px;color:var(--cinza-claro);text-transform:uppercase;letter-spacing:.05em;font-weight:500}
+
+/* ---------- LOGÍSTICA ---------- */
+.logi{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--borda);border:1px solid var(--borda);border-radius:var(--raio);overflow:hidden}
+.logi div{background:var(--branco);padding:32px 26px}
+.logi .ico{color:var(--terra);margin-bottom:16px}
+.logi h4{font-size:1.06rem;margin-bottom:7px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0}
+.logi p{font-size:14.6px;color:var(--cinza);font-weight:300}
+
+/* ---------- DEPOIMENTOS ---------- */
+.depos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.depo{
+  background:rgba(247,242,234,.05);border:1px solid rgba(247,242,234,.14);
+  border-radius:var(--raio);padding:34px 30px;display:flex;flex-direction:column;
+}
+.depo .aspas{font-family:'Fraunces',serif;font-size:3rem;color:var(--terra-claro);line-height:.7;margin-bottom:18px;opacity:.75}
+.depo p{font-size:15.6px;color:rgba(247,242,234,.86);font-weight:300;flex:1;margin-bottom:22px}
+.depo cite{font-style:normal;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-claro);font-weight:600}
+.transf{
+  margin-top:30px;background:rgba(212,120,79,.10);border:1px solid rgba(212,120,79,.3);
+  border-radius:var(--raio);padding:36px 40px;
+}
+.transf h4{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra-claro);margin-bottom:14px;font-weight:600}
+.transf p{font-size:1.03rem;color:rgba(247,242,234,.92);font-weight:300;font-style:italic}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--borda)}
+.faq-q{
+  width:100%;background:none;border:none;cursor:pointer;text-align:left;
+  padding:26px 44px 26px 0;font-family:'Fraunces',serif;font-size:1.15rem;
+  color:var(--tinta);position:relative;transition:.2s;line-height:1.35;
+}
+.faq-q:hover{color:var(--terra)}
+.faq-q::after{
+  content:'';position:absolute;right:6px;top:34px;width:11px;height:11px;
+  border-right:2px solid var(--terra);border-bottom:2px solid var(--terra);
+  transform:rotate(45deg);transition:.3s;
+}
+.faq-item.open .faq-q::after{transform:rotate(225deg);top:38px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.faq-a p{padding:0 40px 28px 0;color:var(--cinza);font-size:15.8px;font-weight:300}
+
+/* ---------- AGENDA ---------- */
+.agenda{
+  background:linear-gradient(140deg,var(--terra) 0%,var(--terra-escuro) 100%);
+  border-radius:calc(var(--raio) + 8px);padding:60px;color:#fff;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;
+  box-shadow:0 24px 60px rgba(142,63,34,.26);position:relative;overflow:hidden;
+}
+.agenda::before{
+  content:'';position:absolute;top:-120px;right:-80px;width:380px;height:380px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.18);
+}
+.agenda::after{
+  content:'';position:absolute;bottom:-160px;right:40px;width:300px;height:300px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.13);
+}
+.agenda-body{position:relative;z-index:2}
+.agenda h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:16px}
+.agenda p{color:rgba(255,255,255,.88);font-weight:300;margin-bottom:26px;max-width:44ch}
+.agenda-steps{position:relative;z-index:2;display:flex;flex-direction:column;gap:18px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-n{
+  flex:none;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:600;
+}
+.step p{margin:0;font-size:15px;color:rgba(255,255,255,.94)}
+
+/* ---------- BLOG ---------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{background:var(--branco);border:1px solid var(--borda);border-radius:var(--raio);overflow:hidden;transition:.3s}
+.post:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.post-top{height:9px;background:linear-gradient(90deg,var(--terra),var(--terra-claro))}
+.post:nth-child(2) .post-top{background:linear-gradient(90deg,var(--azul),var(--azul-claro))}
+.post:nth-child(3) .post-top{background:linear-gradient(90deg,var(--cinza),var(--cinza-claro))}
+.post-body{padding:30px}
+.post-tag{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.post h3{font-size:1.16rem;margin:12px 0 10px}
+.post p{font-size:15px;color:var(--cinza);font-weight:300}
+.post-soon{font-size:12.5px;color:var(--cinza-claro);margin-top:18px;display:block;font-style:italic}
+
+/* ---------- CONTATO ---------- */
+.contato-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.contato h2{font-size:clamp(2rem,3.9vw,2.85rem);margin-bottom:18px}
+.contato .lead{color:var(--cinza);font-size:1.06rem;font-weight:300;margin-bottom:32px}
+.check{display:flex;flex-direction:column;gap:13px;margin-bottom:38px}
+.check li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:15.4px;color:var(--cinza);font-weight:300}
+.check svg{flex:none;color:var(--terra);margin-top:4px}
+.contato-card{
+  background:var(--branco);border:1px solid var(--borda);border-radius:calc(var(--raio) + 4px);
+  padding:42px 40px;box-shadow:var(--sombra);
+}
+.contato-card h3{font-size:1.4rem;margin-bottom:10px}
+.contato-card > p{font-size:15.2px;color:var(--cinza);font-weight:300;margin-bottom:28px}
+.contato-card .btn{width:100%;justify-content:center;margin-bottom:22px;padding:16px 26px;font-size:15.5px}
+.contatos-list{display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--borda)}
+.contato-row{display:flex;gap:13px;align-items:center;font-size:14.8px;color:var(--cinza);transition:.2s}
+.contato-row:hover{color:var(--terra)}
+.contato-row svg{flex:none;color:var(--terra)}
+.contato-row b{color:var(--tinta);font-weight:600;display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--azul);color:rgba(247,242,234,.66);padding:64px 0 34px;font-size:14.6px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-grid h4{font-family:'Inter',sans-serif;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--areia);margin-bottom:18px;font-weight:600}
+.foot-grid a{display:block;margin-bottom:10px;transition:.2s;font-weight:300}
+.foot-grid a:hover{color:var(--terra-claro)}
+.foot-logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:19px;color:var(--areia);font-weight:600;margin-bottom:16px}
+.foot-logo svg path,.foot-logo svg circle{stroke:var(--terra-claro)}
+.foot-about{font-weight:300;max-width:38ch;line-height:1.7}
+.foot-bottom{border-top:1px solid rgba(247,242,234,.13);padding-top:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.2px}
+
+/* ---------- WHATS FLUTUANTE ---------- */
+.wpp-float{
+  position:fixed;bottom:26px;right:26px;z-index:90;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 26px rgba(37,211,102,.4);transition:.28s;
+}
+.wpp-float:hover{transform:scale(1.09)}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ---------- RESPONSIVO ---------- */
+@media(max-width:980px){
+  .hero-grid,.two,.fac,.contato-inner,.agenda{grid-template-columns:1fr;gap:44px}
+  .roda{max-width:340px;margin:0 auto}
+  .cards,.depos,.posts{grid-template-columns:1fr 1fr}
+  .logi{grid-template-columns:1fr 1fr}
+  .fac-img::after{display:none}
+  .agenda{padding:44px 34px}
+}
+@media(max-width:680px){
+  body{font-size:16px}
+  .section{padding:74px 0}
+  .hero{padding:140px 0 70px}
+  .wrap{padding:0 20px}
+  .nav-links{
+    position:fixed;inset:64px 0 auto;background:var(--areia);
+    flex-direction:column;gap:0;padding:14px 20px 26px;
+    border-bottom:1px solid var(--borda);display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:13px 0;width:100%;border-bottom:1px solid var(--borda);font-size:16px}
+  .nav-links .btn{margin-top:16px;border-bottom:none;justify-content:center}
+  .menu-btn{display:block}
+  .cards,.depos,.posts,.logi{grid-template-columns:1fr}
+  .hero-meta{gap:24px}
+  .contato-card{padding:32px 24px}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav>
+    <a href="#" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="#B9552F" stroke-width="1.4"/>
+          <circle cx="20" cy="20" r="11" stroke="#2B4756" stroke-width="1.4" stroke-dasharray="3 3"/>
+          <circle cx="20" cy="20" r="4.4" fill="#B9552F"/>
+        </svg>
+      </span>
+      A Roda dos Homens
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#grupo">O grupo</a>
+      <a href="#facilitador">O facilitador</a>
+      <a href="#metodo">Como funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato" class="btn">Quero participar</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Projeto Homens em Equilíbrio · Rio de Janeiro e Niterói</span>
+      <h1>Um lugar onde o homem pode <em>falar</em> — e ser escutado.</h1>
+      <p class="hero-lead">Grupo reflexivo para homens a partir de 22 anos. Encontros quinzenais, presenciais e online, conduzidos por um psicólogo com 26 anos de trabalho em grupos de gênero.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn">Agendar entrevista inicial</a>
+        <a href="#grupo" class="btn btn-ghost">Conhecer a proposta</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>8</strong><span>homens por turma</span></div>
+        <div><strong>Quinzenal</strong><span>1h30 por encontro</span></div>
+        <div><strong>Agosto/26</strong><span>início da primeira turma</span></div>
+      </div>
+    </div>
+    <div class="roda" id="roda">
+      <div class="roda-ring"></div>
+      <div class="roda-ring"></div>
+      <div class="roda-ring"></div>
+      <div class="roda-core">Escuta<br>entre<br>homens</div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<div class="manifesto">
+  <div class="wrap">
+    <p>O homem não pode ser <span>sinônimo de violência.</span></p>
+  </div>
+</div>
+
+<!-- O GRUPO -->
+<section class="section" id="grupo">
+  <div class="wrap">
+    <div class="two">
+      <div class="reveal">
+        <span class="eyebrow">Sobre o grupo</span>
+        <h2 style="font-size:clamp(2rem,3.9vw,2.85rem);margin-bottom:24px">Vinte e cinco anos de roda, agora abertos a você</h2>
+        <p style="color:var(--cinza);font-weight:300;margin-bottom:18px">A Roda dos Homens é a continuação das vivências terapêuticas com homens iniciadas nos trabalhos reflexivos de gênero em projetos sociais no fim dos anos 1990.</p>
+        <p style="color:var(--cinza);font-weight:300">Ao longo desses 25 anos, essa abordagem ganhou fôlego e ampliou novas possibilidades de troca entre homens — com aprendizados que apontam para uma nova consciência masculina, interessada no aprimoramento de seus próprios planos de mudança.</p>
+      </div>
+      <div class="reveal">
+        <div class="valor-block">
+          <h3>Missão</h3>
+          <p>Encontrar um masculino possível dentro de si mesmo, que busque no entendimento de novos diálogos soluções equilibradas para seus conflitos.</p>
+        </div>
+        <div class="valor-block">
+          <h3>Valores</h3>
+          <p>Revitalizar as relações interpessoais através de uma escuta ativa e acolhedora, que valorize os diálogos, respeite as diferenças e fortaleça os vínculos afetivos.</p>
+        </div>
+        <div class="valor-block">
+          <h3>O diferencial</h3>
+          <p>O trabalho oferta, com criatividade, a conexão corpo/mente a todos os participantes — quando cada um entende, de forma cognitiva e emocional, como se utiliza das próprias sensações e percepções para interagir com o seu universo pessoal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMAS -->
+<section class="section section-dark">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Temas dos encontros</span>
+      <h2>O que se conversa na roda</h2>
+      <p>Não há roteiro fixo. Os temas emergem do grupo — e estes são os que mais atravessam os homens que chegam até aqui.</p>
+    </div>
+    <div class="pill-box reveal">
+      <span class="pill">Masculinidades e identidade</span>
+      <span class="pill">Paternidade</span>
+      <span class="pill">Relacionamentos e afeto</span>
+      <span class="pill">Saúde mental masculina</span>
+      <span class="pill">Raiva e emoções</span>
+      <span class="pill">Corpo e autocuidado</span>
+      <span class="pill">Sexualidade</span>
+      <span class="pill">Violência e vulnerabilidade</span>
+      <span class="pill">Espiritualidade</span>
+      <span class="pill">Processos de mudança e seus gatilhos</span>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITADOR -->
+<section class="section section-alt" id="facilitador">
+  <div class="wrap">
+    <div class="fac">
+      <div class="fac-img reveal">
+        <img src="https://wou-dot.github.io/comvida-site/Gemini_Generated_Image_iwctssiwctssiwct.png" alt="Luiz Fernando Moreira, psicólogo e facilitador d'A Roda dos Homens">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">O facilitador</span>
+        <span class="crp">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          CRP 05-17728
+        </span>
+        <h2>Luiz Fernando Moreira</h2>
+        <p class="fac-sub">Psicólogo construcionista social · Psicoterapeuta sistêmico · Facilitador de grupos reflexivos de gênero</p>
+        <p>São 36 anos de formação e 26 anos dedicados a projetos sociais — facilitando, coordenando e supervisionando equipes socioeducativas dentro dos territórios das comunidades do Rio de Janeiro e de Niterói.</p>
+        <p>Foi ali, no contato direto com a realidade de homens de origens muito diferentes, que se construiu o método da roda: uma escuta que não julga, mas também não passa a mão na cabeça — e que sustenta o desconforto necessário para que a mudança aconteça.</p>
+        <div class="fac-stats">
+          <div><strong>36</strong><span>anos de formação</span></div>
+          <div><strong>26</strong><span>anos em projetos sociais</span></div>
+          <div><strong>2</strong><span>cidades atendidas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section" id="metodo">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Uma metodologia construída na prática</h2>
+      <p>Encontros quinzenais em grupo fechado, com no máximo oito homens. Cada turma percorre um caminho próprio, mas todas atravessam os mesmos quatro movimentos.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card">
+        <span class="card-num">01</span>
+        <h3>Entrevista inicial</h3>
+        <p>Antes de entrar na roda, todo participante passa por uma conversa individual com o facilitador. É onde se entende o momento de vida, as expectativas e se o grupo faz sentido para você agora.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">02</span>
+        <h3>Chegada à roda</h3>
+        <p>O grupo se abre com uma escuta ativa e acolhedora. Não se cobra performance, nem se exige que ninguém fale antes de estar pronto — o tempo de cada um é respeitado.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">03</span>
+        <h3>Reflexão de gênero</h3>
+        <p>Os temas trazidos pelo grupo são trabalhados sob a ótica reflexiva de gênero: o que a gente aprendeu a ser homem, o que isso custa e o que é possível reconstruir.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">04</span>
+        <h3>Corpo e mente</h3>
+        <p>Vivências que conectam sensação e percepção, para que a mudança não fique só no discurso — mas se instale no corpo, nas relações e no dia a dia.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">05</span>
+        <h3>Plano de mudança</h3>
+        <p>Cada participante identifica os próprios gatilhos e desenha, junto ao grupo, movimentos concretos para as relações que quer transformar.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">06</span>
+        <h3>Continuidade</h3>
+        <p>A roda não termina no encontro. O vínculo entre os participantes segue como rede de apoio — e novas turmas mantêm o ciclo aberto.</p>
+      </div>
+    </div>
+
+    <div class="logi reveal" style="margin-top:56px">
+      <div>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a7 7 0 1114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg></div>
+        <h4>Presencial e online</h4>
+        <p>Botafogo, no Rio de Janeiro, e Icaraí, em Niterói. Encontros online pelo Google Meet para quem está distante.</p>
+      </div>
+      <div>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h4>Quinzenal</h4>
+        <p>Um encontro a cada quinze dias, com 1h30 de duração e 10 minutos de intervalo para o café.</p>
+      </div>
+      <div>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 5.5a3.2 3.2 0 010 6M18 20a6 6 0 00-2-4.5"/></svg></div>
+        <h4>Turmas de 8</h4>
+        <p>Grupo fechado, com no máximo oito participantes — número que garante que todos tenham lugar de fala.</p>
+      </div>
+      <div>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.2"/><path d="M12 7v5l3.3 2"/></svg></div>
+        <h4>A partir de 22 anos</h4>
+        <p>Aberto a todos os homens a partir dos 22 anos, sem limite de idade. Sobre planos de saúde, consulte-nos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section section-dark" id="depoimentos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Quem já sentou na roda</h2>
+      <p>Relatos de participantes das vivências anteriores, identificados apenas por iniciais para preservar o sigilo do grupo.</p>
+    </div>
+    <div class="depos reveal">
+      <div class="depo">
+        <div class="aspas">&ldquo;</div>
+        <p>Conhecer a realidade de outros homens e reconhecer outros masculinos me deu uma oportunidade única de ampliar meu repertório para a resolução de conflitos e encorajar meus processos de mudança.</p>
+        <cite>— L. F. G.</cite>
+      </div>
+      <div class="depo">
+        <div class="aspas">&ldquo;</div>
+        <p>Eu não tinha ideia da satisfação que é falar dos meus erros sem a preocupação de estar sendo monitorado ou criticado. Acho que isso deve ser a sensação verdadeira de humildade.</p>
+        <cite>— C. A. L.</cite>
+      </div>
+      <div class="depo">
+        <div class="aspas">&ldquo;</div>
+        <p>Reconhecer nossos erros e nossas dificuldades foi um divisor de águas. Hoje eu me vejo de maneira integral, e isso me deu uma leveza incrível para enfrentar os meus próprios demônios internos de peito aberto.</p>
+        <cite>— F. C. J.</cite>
+      </div>
+    </div>
+    <div class="transf reveal">
+      <h4>Uma transformação relatada</h4>
+      <p>&ldquo;Foi muito importante descobrir, no meu modelo de masculinidade, pontos em que eu saía fora do meu equilíbrio e acabava inviabilizando meus discursos no âmbito da paternidade — onde minha postura autoritária me distanciou de uma convivência mais amorosa e mais fraterna. Hoje penso em resgatar o que perdi, porque a solução está em mim, e esse será o caminho a ser seguido.&rdquo;</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="section" id="agenda">
+  <div class="wrap">
+    <div class="agenda reveal">
+      <div class="agenda-body">
+        <span class="eyebrow" style="color:rgba(255,255,255,.85)">Próxima turma</span>
+        <h2>Primeira turma começa em agosto de 2026</h2>
+        <p>As entrevistas iniciais já estão sendo agendadas. A turma se forma com oito homens — quando as vagas se completam, abre-se lista de espera para o ciclo seguinte.</p>
+        <a href="#contato" class="btn btn-light">Quero fazer minha entrevista</a>
+      </div>
+      <div class="agenda-steps">
+        <div class="step"><span class="step-n">1</span><p>Você entra em contato pelo WhatsApp ou e-mail.</p></div>
+        <div class="step"><span class="step-n">2</span><p>Agendamos a entrevista inicial — presencial ou online.</p></div>
+        <div class="step"><span class="step-n">3</span><p>Conversamos sobre o seu momento e sobre o grupo.</p></div>
+        <div class="step"><span class="step-n">4</span><p>Havendo encaixe, você é integrado à turma de agosto.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <div class="head reveal" style="margin:0 auto 54px;text-align:center">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Dúvidas antes de começar</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q">Preciso estar em crise para participar?</button>
+        <div class="faq-a"><p>Não. A roda não é um pronto-socorro emocional — é um espaço de reflexão continuada. Ela serve tanto para quem atravessa um momento difícil quanto para quem simplesmente quer entender melhor a própria forma de ser homem, de se relacionar e de reagir aos conflitos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como funciona a entrevista inicial?</button>
+        <div class="faq-a"><p>É uma conversa individual com o facilitador, presencial ou online, antes da entrada no grupo. Serve para entender o seu momento de vida, esclarecer o funcionamento da roda e avaliar, juntos, se o grupo faz sentido para você agora. A entrevista é obrigatória para todos os participantes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Grupo substitui terapia individual?</button>
+        <div class="faq-a"><p>Não. São trabalhos diferentes e complementares. O grupo reflexivo trabalha a partir da troca entre pares e da experiência coletiva; a psicoterapia individual aprofunda a história pessoal. Muitos participantes fazem os dois — e isso é conversado na entrevista inicial.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O que é dito no grupo fica no grupo?</button>
+        <div class="faq-a"><p>Sim. O sigilo é a base do contrato de convivência: nada do que é compartilhado sai da roda. Esse acordo é firmado por todos no primeiro encontro e sustentado pelo facilitador ao longo de todo o ciclo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Posso participar de outra cidade?</button>
+        <div class="faq-a"><p>Pode. O formato é híbrido: os encontros presenciais acontecem em Botafogo (Rio de Janeiro) e em Icaraí (Niterói), e há participação online pelo Google Meet para quem mora longe ou não consegue estar presente em algum encontro.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Qual é o investimento?</button>
+        <div class="faq-a"><p>O valor é apresentado na entrevista inicial, junto com as formas de pagamento e o calendário da turma. Sobre reembolso por planos de saúde, consulte-nos — avaliamos caso a caso.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Há vagas abertas no momento?</button>
+        <div class="faq-a"><p>Sim. A primeira turma se forma para iniciar em agosto de 2026 e as entrevistas iniciais já estão sendo agendadas. Como cada turma comporta oito homens, as vagas se encerram rápido — e quem não entra no ciclo atual fica na lista de espera do próximo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">E se eu não conseguir falar?</button>
+        <div class="faq-a"><p>Tudo bem. Ninguém é obrigado a falar antes de se sentir pronto. Muitos homens passam os primeiros encontros só escutando — e é justamente essa escuta que costuma abrir caminho para a própria fala.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section" id="reflexoes">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Reflexões</span>
+      <h2>Textos sobre masculinidade</h2>
+      <p>Publicações esporádicas do facilitador sobre os temas que atravessam a roda.</p>
+    </div>
+    <div class="posts reveal">
+      <div class="post">
+        <div class="post-top"></div>
+        <div class="post-body">
+          <span class="post-tag">Masculinidades</span>
+          <h3>O que aprendemos a esconder</h3>
+          <p>Sobre a educação que ensina o menino a não chorar — e o preço que o adulto paga por isso nas suas relações.</p>
+          <span class="post-soon">Em breve</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-top"></div>
+        <div class="post-body">
+          <span class="post-tag">Paternidade</span>
+          <h3>A autoridade que afasta</h3>
+          <p>Quando a postura autoritária inviabiliza o vínculo — e o que é possível resgatar de uma convivência mais fraterna.</p>
+          <span class="post-soon">Em breve</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-top"></div>
+        <div class="post-body">
+          <span class="post-tag">Emoções</span>
+          <h3>Raiva não é diagnóstico</h3>
+          <p>Reconhecer os gatilhos como ponto de partida para os processos de mudança, e não como sentença sobre quem se é.</p>
+          <span class="post-soon">Em breve</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="section section-alt contato" id="contato">
+  <div class="wrap">
+    <div class="contato-inner">
+      <div class="reveal">
+        <span class="eyebrow">Vamos conversar</span>
+        <h2>O primeiro passo é uma conversa</h2>
+        <p class="lead">Chame no WhatsApp para agendar a entrevista inicial. Sem compromisso, sem cobrança — só uma conversa para entender se a roda é o lugar certo para você agora.</p>
+        <ul class="check">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Atendimento sigiloso e sem julgamento</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Entrevista presencial ou online, você escolhe</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Turmas de agosto de 2026 em formação</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Psicólogo com registro ativo — CRP 05-17728</li>
+        </ul>
+      </div>
+      <div class="contato-card reveal">
+        <h3>Agendar entrevista inicial</h3>
+        <p>Resposta em até 24 horas úteis, direto com o facilitador.</p>
+        <a class="btn" id="wppBtn" href="#" target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2s-.7 1-.9 1.2c-.2.2-.3.2-.6.1s-1.3-.5-2.4-1.5c-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6c-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.5-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          Chamar no WhatsApp
+        </a>
+        <div class="contatos-list">
+          <a class="contato-row" href="tel:+5521985748875">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <span><b>Telefone</b>(21) 98574-8875</span>
+          </a>
+          <a class="contato-row" href="mailto:moreilf@yahoo.com.br">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="19" height="15" rx="2.4"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><b>E-mail</b>moreilf@yahoo.com.br</span>
+          </a>
+          <a class="contato-row" href="https://instagram.com/luiz_prof.psi" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            <span><b>Instagram</b>@luiz_prof.psi</span>
+          </a>
+          <div class="contato-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-7-10a7 7 0 1114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
+            <span><b>Onde</b>Botafogo (RJ) e Icaraí (Niterói)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke-width="1.4"/>
+            <circle cx="20" cy="20" r="11" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <circle cx="20" cy="20" r="4.4" fill="#D4784F" stroke="none"/>
+          </svg>
+          A Roda dos Homens
+        </div>
+        <p class="foot-about">Projeto Homens em Equilíbrio. Grupos reflexivos de gênero no Rio de Janeiro e em Niterói, facilitados por Luiz Fernando Moreira — psicólogo, CRP 05-17728.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="#grupo">O grupo</a>
+        <a href="#facilitador">O facilitador</a>
+        <a href="#metodo">Como funciona</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#agenda">Próximas turmas</a>
+        <a href="#faq">Dúvidas frequentes</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="tel:+5521985748875">(21) 98574-8875</a>
+        <a href="mailto:moreilf@yahoo.com.br">moreilf@yahoo.com.br</a>
+        <a href="https://instagram.com/luiz_prof.psi" target="_blank" rel="noopener">@luiz_prof.psi</a>
+        <a href="#contato">Agendar entrevista</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 A Roda dos Homens — Projeto Homens em Equilíbrio.</span>
+      <span>Este site não substitui atendimento psicológico individual ou emergencial.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wpp-float" id="wppFloat" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2s-.7 1-.9 1.2c-.2.2-.3.2-.6.1s-1.3-.5-2.4-1.5c-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6c-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.5-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<script>
+// WhatsApp com mensagem pré-preenchida
+(function(){
+  var num='5521985748875';
+  var msg='Olá, Luiz! Vim pelo site d\'A Roda dos Homens e gostaria de agendar a entrevista inicial para participar do grupo.';
+  var url='https://wa.me/'+num+'?text='+encodeURIComponent(msg);
+  document.getElementById('wppBtn').href=url;
+  document.getElementById('wppFloat').href=url;
+})();
+
+// Header ao rolar
+var header=document.getElementById('header');
+window.addEventListener('scroll',function(){
+  header.classList.toggle('scrolled',window.scrollY>20);
+});
+
+// Menu mobile
+var navLinks=document.getElementById('navLinks');
+document.getElementById('menuBtn').addEventListener('click',function(){
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(){navLinks.classList.remove('open');});
+});
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.parentElement, ans=item.querySelector('.faq-a'), open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight=null;
+    });
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  });
+});
+
+// Pontos da roda
+(function(){
+  var roda=document.getElementById('roda'), n=8, r=44;
+  for(var i=0;i<n;i++){
+    var ang=(i/n)*Math.PI*2-Math.PI/2;
+    var d=document.createElement('span');
+    d.className='dot';
+    d.style.setProperty('--x',(Math.cos(ang)*r)+'vmin');
+    d.style.setProperty('--y',(Math.sin(ang)*r)+'vmin');
+    d.style.animationDelay=(i*0.42)+'s';
+    roda.appendChild(d);
+  }
+  function place(){
+    var w=roda.offsetWidth/2-16;
+    roda.querySelectorAll('.dot').forEach(function(d,i){
+      var ang=(i/n)*Math.PI*2-Math.PI/2;
+      d.style.setProperty('--x',(Math.cos(ang)*w)+'px');
+      d.style.setProperty('--y',(Math.sin(ang)*w)+'px');
+    });
+  }
+  place();
+  window.addEventListener('resize',place);
+})();
+
+// Reveal on scroll
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}
+  });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
